@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+// options for Java generated sources
+option java_multiple_files = true;
+option java_package = "com.knoldus.model";
+option java_outer_classname = "CoreGrpcApi";
+
+package sms.core;
+
+message PingRequest {
+    string msg = 1;
+}
+
+message PingResponse {
+    string msg = 1;
+    string name = 2;
+}
+
+service CoreService {
+    rpc Ping (PingRequest) returns (PingResponse);
+}
